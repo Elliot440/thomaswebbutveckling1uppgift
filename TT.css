@@ -1,0 +1,234 @@
+
+* {
+    box-sizing: border-box;
+}
+
+/* Grundutseendet för hela sidan */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #eef1f6;
+    color: #10234b;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sidans övre del */
+header {
+    text-align: center;
+    padding: 25px 10px;
+}
+
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 42px;
+    color: #10234b;
+}
+
+
+.subtitle {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #52617d;
+}
+
+/* Rubriken ovanför produkterna */
+.section-title {
+    margin: 25px 0 35px;
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Placerar produktkorten i tre kolumner */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bestämmer produktkortens utseende och placering */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 22px;
+    background-color: white;
+    border: 2px solid #c5cede;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(16, 35, 75, 0.13);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Ändrar kant och skugga när muspekaren är över ett produktkort */
+.product-card:hover {
+    border-color: #10234b;
+    box-shadow: 0 8px 22px rgba(16, 35, 75, 0.2);
+}
+
+
+.label {
+    align-self: flex-start;
+    margin-bottom: 15px;
+    padding: 7px 12px;
+    background-color: #10234b;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+
+.category {
+    margin: 0 0 8px;
+    color: #68758c;
+    font-size: 14px;
+}
+
+
+.product-card h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    color: #10234b;
+}
+
+
+.description {
+    margin: 0 0 15px;
+    color: #52617d;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Det aktuella priset */
+.price {
+    margin: 5px 0 15px;
+    color: #10234b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Det gamla priset visas med ett streck genom texten */
+.old-price {
+    margin: 5px 0 0;
+    color: #8791a3;
+    font-size: 16px;
+    text-decoration: line-through
+}
+	
+	
+.product-card ul {
+    padding-left: 20px;
+    margin: 0 0 25px;
+    color: #354563;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Utseendet på köpknapparna */
+.button {
+    display: block;
+    margin-top: auto;
+    padding: 15px;
+    background-color: #10234b;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+/* Ändrar knappens färg när muspekaren är över den */
+.button:hover {
+    background-color: #24477f;
+}
+
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    color: #52617d;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Anpassar layouten för skärmar som är högst 850 pixlar breda */
+@media screen and (max-width: 850px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/* Anpassar layouten för mobilskärmar som är högst 560 pixlar breda */
+@media screen and (max-width: 560px) {
+    body {
+        padding: 12px;
+    }
+
+    header {
+        padding: 20px 5px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        margin: 20px 0 25px;
+        font-size: 24px;
+    }
+
+    
+    .container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+  
+    .product-card {
+        width: 100%;
+        max-width: 400px;
+        justify-self: center;
+        padding: 18px;
+    }
+
+    /* Bestämmer produktbildens höjd på mobil */
+    .product-card img {
+        height: 280px;
+    }
+
+    
+    .product-card h2 {
+        font-size: 22px;
+    }
+
+   
+    .button {
+        padding: 15px 12px;
+    }
+}
